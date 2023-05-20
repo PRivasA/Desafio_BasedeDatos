@@ -1,0 +1,45 @@
+﻿<Window x:Class="Ejemplo_base_de_datos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ejemplo_base_de_datos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="ListItemAlumno" HorizontalAlignment="Stretch" Grid.Column="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label>Nombre</Label>
+                        <TextBlock Text="{Binding Nombre}"></TextBlock>
+                        <Label>Telefono</Label>
+                        <TextBlock Text="{Binding Telefono}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1">
+            <Label >Id</Label>
+            <TextBox Name="txtId"></TextBox>
+            <Label >Nombre</Label>
+            <TextBox Name="txtNombre" Text="Paola"></TextBox>
+            <Label >Direccion</Label>
+            <TextBox Name="txtDireccion" TextChanged="txtDireccion_TextChanged" Text="jalapa"></TextBox>
+            <Label >Telefono</Label>
+            <TextBox Name="txtTelefono" TextChanged="txtTelefono_TextChanged" Text="36478644"></TextBox>
+            <Label >Carnet</Label>
+            <TextBox Name="txtCarnet" TextChanged="txtCarnet_TextChanged" Text="0907-22-15036"></TextBox>
+            <Label >Edad</Label>
+            <TextBox Name="txtEdad" TextChanged="txtEdad_TextChanged" Text="18"></TextBox>
+            <Button Name="btnGuardar"  Grid.Row="6" Click="btnGuardar_Click_1">Guardar</Button>
+            <Button Name="btnEliminar" Margin="0,8,0,0" Grid.Row="6" Click="btnEliminar_Click">Eliminar</Button>
+            <Button Name="btnActualizar" Margin="0,8,0,0" Click="btnGuardar_Click">Actualizar</Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
